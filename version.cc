@@ -2,5 +2,7 @@
 
 extern "C" {
 
-const int jez_isVersioned = 1;
+int jez_isVersioned() {
+    return 1;
+}
 }

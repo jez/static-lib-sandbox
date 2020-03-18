@@ -9,9 +9,12 @@ libversion.a: version.pic.o
 main.o: main.c
 	clang-9 -c main.c -o main.o
 
-main: main.o libversion.a
-	clang main.o -L. -lversion -o main
+libmain.so: main.o libversion.a
+	clang-9 main.o libversion.a -shared -o libmain.so
+
+main: libmain.so
+	clang-9 -L. -lmain -o main
 
 .PHONY: clean
 clean:
-	rm -fv *.o *.a main
+	rm -fv *.so *.o *.a main

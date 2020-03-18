@@ -6,7 +6,7 @@
 extern "C" {
 #endif
 
-extern const int jez_isVersioned;
+int jez_isVersioned();
 
 #ifdef __cplusplus
 }
