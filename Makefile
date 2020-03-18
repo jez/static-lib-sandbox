@@ -10,7 +10,7 @@ main.o: main.c
 	clang-9 -c main.c -o main.o
 
 main: main.o libversion.a
-	clang main.o -L. -Wl,--whole-archive -lversion -Wl,--no-whole-archive -o main
+	clang main.o -L. -lversion -o main
 
 .PHONY: clean
 clean:
